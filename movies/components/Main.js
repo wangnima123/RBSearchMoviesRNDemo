@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+
 import {
     ListView,
     TextInput,
 } from 'react-native';
+
 import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    Animated,
 } from 'react-native';
 
+// import {
+//     ListItem1,
+// } from './ListItem'
+
 import { debounce } from 'lodash';
+import ListItem1 from "./ListItem";
 
 export default class main extends Component{
 
@@ -50,8 +58,10 @@ export default class main extends Component{
             })
     }, 500);
 
-    renderRow(row){
+    renderRow(row, sId, rId){
         return(
+            <ListItem1 row = {row} delay = {rId * 50}></ListItem1>
+            /*
             <View style={styles.listItem}>
                 <Image source={{uri: row.Poster}} style={styles.poster}/>
                 <View style={{flex: 1}}>
@@ -59,7 +69,8 @@ export default class main extends Component{
                     <Text style={styles.subHeading}>{row.Type} - {row.Year}</Text>
                 </View>
             </View>
-        )
+            */
+        );
     }
 
     render(){

@@ -35,7 +35,11 @@ export default class main extends Component{
                         rowHasChanged:(r1, r2) => r1 !== r2
                     });
 
-                var searchList = new Array(responseData);
+                var searchList = new Array();
+
+                for(var i=10;i>=1;i--){
+                    searchList.push(responseData);
+                }
                     this.setState({
                         dataSource:da.cloneWithRows(searchList)
                     })
